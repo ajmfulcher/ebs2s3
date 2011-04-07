@@ -5,10 +5,10 @@ gem 'rails', '3.0.4'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-gem 'fog'
-gem 'rufus-scheduler'
-gem 'authlogic'
+gem 'sqlite3', '1.3.3'
+gem 'fog', '0.7.1' 
+gem 'rufus-scheduler', '2.0.8'
+gem 'authlogic', '2.1.6'
 
 # Use unicorn as the web server
 # gem 'unicorn'
