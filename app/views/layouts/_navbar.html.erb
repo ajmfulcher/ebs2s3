@@ -1,0 +1,14 @@
+  <div class="profile">
+    <ul class="nav">
+      <li><%= link_to @current_user.login, edit_account_path %></li>
+      <li>|</li>
+      <li><%= link_to 'Log out', user_session_path, :method => :delete %></li>
+    </ul>
+  </div>
+  <div class="clear"></div>
+  <div class="navbar2">
+  <ul>
+    <li><%= link_to 'Jobs', jobs_path %></li>
+    <li><%= link_to 'Volumes', volumes_path %></li>
+  </ul>
+  </div>

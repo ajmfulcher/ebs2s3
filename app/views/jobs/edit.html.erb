@@ -1,0 +1,10 @@
+<%= render :partial => 'layouts/navbar' %>
+<div class="thin-pad">
+  <h2>Editing job</h2>
+  <div class="main-page">
+    <%= render 'form' %>
+    
+    <%= link_to 'Show', @job %> |
+    <%= link_to 'Back', jobs_path %>
+  </div>
+</div>

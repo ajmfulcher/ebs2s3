@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  started: 2011-03-28 19:46:24
+  status: MyString
+  message: MyText
+  job: 
+
+two:
+  started: 2011-03-28 19:46:24
+  status: MyString
+  message: MyText
+  job: 

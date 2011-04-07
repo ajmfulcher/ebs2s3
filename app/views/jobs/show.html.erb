@@ -1,0 +1,59 @@
+<%= render :partial => 'layouts/navbar' %>
+<div class="thin-pad">
+  <h2><%= @job.name %></h2>
+  <div class="main-page">
+    <p id="notice"><%= notice %></p>
+    
+    <p>
+      <b>Name:</b>
+      <%= @job.name %>
+    </p>
+    
+    <p>
+      <b>Description:</b>
+      <%= @job.description %>
+    </p>
+    
+    <p>
+      <b>Ebsvol:</b>
+      <%= @job.ebsvol %>
+    </p>
+    
+    <p>
+      <b>Cronline:</b>
+      <%= @job.cronline %>
+    </p>
+    
+    <p>
+      <b>Copies:</b>
+      <%= @job.copies %>
+    </p>
+    
+    
+    <%= link_to 'Edit', edit_job_path(@job) %> |
+    <%= link_to 'Back', jobs_path %>
+    <br></br>
+    <h3>All snapshots</h3>
+    <% unless @snapshots.empty? %>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Progress</th>
+        <th>Created</th>
+        <th>State</th>
+        <th>Size</th>
+      </tr>
+    
+    <% @snapshots.each do |snap| %>
+      <tr>
+        <td><%= snap.id %></td>
+        <td><%= snap.progress %></td>
+        <td><%= snap.created_at %></td>
+        <td><%= snap.state %></td>
+        <td><%= snap.volume_size %></td>
+      </tr>
+    <% end %>
+    </table>
+    <% end %>
+  </div>
+</div>

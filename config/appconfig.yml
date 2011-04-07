@@ -1,0 +1,3 @@
+aws_key: # Amazon EC2 user key
+aws_secret: # Amazon EC2 secret key
+aws_region: # Amazon EC2 region

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EBS-2-S3</title>
+  <%= stylesheet_link_tag ('blueprint/screen.css') %>
+  <%= stylesheet_link_tag ('table.css') %>
+  <%= stylesheet_link_tag ('blueprint/print.css'), :media => 'print' %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body id="body-main">
+<div class="container">
+  <div class="test">
+    <%= yield %>
+  </div>
+</div>
+</body>
+</html>
