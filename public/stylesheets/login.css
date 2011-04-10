@@ -1,0 +1,24 @@
+#floater {
+    position:relative; float:left;
+    height:50%;	margin-bottom:-200px;
+    width:1px;
+}
+
+#centered {
+    position:relative; clear:left;
+    min-height:250px; width:80%; max-width:800px; min-width:400px;
+    margin:0 auto;
+    background:#fff;
+    border:1px solid #E9E9E9;
+}
+
+.login-box {
+    padding:30px;
+    margin-left:25%;
+}
+
+html, body {
+    margin:0; padding:0;
+    height:100%;
+    background-color: #336699;
+}

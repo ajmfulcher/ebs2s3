@@ -1,0 +1,120 @@
+.navbar2 {
+    height: 30px;
+    width: 100%;
+    border-top: solid #000 1px;
+    border-bottom: solid #000 1px;
+    margin-bottom: 15px;
+    background-color: #336699;
+}
+.navbar2 ul {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: #FFF;
+    line-height: 30px;
+    white-space: nowrap;
+}
+.navbar2 li {
+    list-style-type: none;
+    display: inline;
+}
+.navbar2 li a {
+    text-decoration: none;
+    padding: 7px 10px;
+    color: #FFF;
+}
+.navbar2 lia:link {
+    color: #FFF:
+}
+.navbar2 lia:visited {
+    color: #CCC;
+}
+.navbar2 lia:hover {
+    font-weight: bold;
+    color: #FFF;
+    background-color: #3366FF;
+}
+
+.profile {
+    clear:right;
+    float:right;
+    margin-top:9px;
+    margin-bottom:9px;
+    width:200px;
+}
+
+ul.nav {
+    font-size:11px;
+    margin:3px 0 0;
+    white-space:nowrap;
+    float:right;
+}
+
+ul.nav li {
+    display:inline;
+    list-style-type:none;
+    margin:0 15px 0 0;
+    font-size:12px;
+    font-weight:bold;
+    overflow:auto;
+    padding:8px 3px 8px 2px;
+    text-shadow:1px 1px 0 #FFFFFF;
+}
+
+.main-page {
+    background-color:#F8F8F8;
+    padding:20px;
+    border:1px solid #E9E9E9;
+    min-height:300px;
+}
+
+.container {
+    background-color:#FFF;
+    border:1px solid #E9E9E9;
+    min-height:300px;
+}
+
+.thin-pad {
+    padding:0.7em;
+    margin-bottom:20px;
+}
+
+.body-main {
+    background-color: #336699;
+}
+
+#notice {
+    color: green;
+}
+
+.field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: table;
+}
+
+#error_explanation {
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+#error_explanation h2 
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+}
+
+#error_explanation ul li {
+    font-size: 12px;
+    list-style: square;
+}
