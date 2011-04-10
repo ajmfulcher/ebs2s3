@@ -6,7 +6,7 @@ Ebs2s3::Application.routes.draw do
   resources :volumes
   resources :users
   resource :user_session
-  root :to => "user_sessions#new"
+  root :to => "jobs#index"
 
   match 'jobs/:id/schedule' => 'jobs#schedule'
 
