@@ -1,31 +1,33 @@
-<%= render :partial => 'layouts/navbar' %>
-<div class="thin-pad">
-  <h2>Available volumes</h2>
-  <div class="main-page">
-    <table>
-      <tr>
-        <th>Volume Id</th>
-        <th>Created</th>
-        <th>Zone</th>
-        <th>Size</th>
-        <th>State</th>
-        <th></th>
-      </tr>
-    
-    <% @volumes.each do |vol| %>
-      <tr>
-        <td><%= vol.id %></td>
-        <td><%= vol.created_at %></td>
-        <td><%= vol.availability_zone %></td>
-        <td><%= vol.size %></td>
-        <td><%= vol.state %></td>
-        <% if @jobvols.member?(vol.id) %>
-        <td><%= link_to 'Show Jobs', jobs_path %></td>
-        <% else %>
-        <td><%= link_to 'Create Snapshot Job', new_job_path(:ebsvol => vol.id) %></td>
-        <% end %>
-      </tr>
-    <% end %>
-    </table>
+<div class="container">
+  <%= render :partial => 'layouts/navbar' %>
+  <div class="thin-pad">
+    <h2>Available volumes</h2>
+    <div class="main-page">
+      <table>
+        <tr>
+          <th>Volume Id</th>
+          <th>Created</th>
+          <th>Zone</th>
+          <th>Size</th>
+          <th>State</th>
+          <th></th>
+        </tr>
+      
+      <% @volumes.each do |vol| %>
+        <tr>
+          <td><%= vol.id %></td>
+          <td><%= vol.created_at %></td>
+          <td><%= vol.availability_zone %></td>
+          <td><%= vol.size %></td>
+          <td><%= vol.state %></td>
+          <% if @jobvols.member?(vol.id) %>
+          <td><%= link_to 'Show Jobs', jobs_path %></td>
+          <% else %>
+          <td><%= link_to 'Create Snapshot Job', new_job_path(:ebsvol => vol.id) %></td>
+          <% end %>
+        </tr>
+      <% end %>
+      </table>
+    </div>
   </div>
 </div>

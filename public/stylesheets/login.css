@@ -22,3 +22,8 @@ html, body {
     height:100%;
     background-color: #336699;
 }
+
+.first-login-box {
+    padding:30px;
+    margin-left:10%;
+}

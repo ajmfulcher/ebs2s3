@@ -1,36 +1,38 @@
-<%= render :partial => 'layouts/navbar' %>
-<div class="thin-pad">
-  <h2>All jobs</h2>
-  <div class="main-page">
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Ebsvol</th>
-        <th>Cronline</th>
-        <th>Copies</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
+<div class="container">
+  <%= render :partial => 'layouts/navbar' %>
+  <div class="thin-pad">
+    <h2>All jobs</h2>
+    <div class="main-page">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Ebsvol</th>
+          <th>Cronline</th>
+          <th>Copies</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      
+      <% @jobs.each do |job| %>
+        <tr>
+          <td><%= job.name %></td>
+          <td><%= job.description %></td>
+          <td><%= job.ebsvol %></td>
+          <td><%= job.cronline %></td>
+          <td><%= job.copies %></td>
+          <td><%= link_to 'Show', job %></td>
+          <td><%= link_to 'Edit', edit_job_path(job) %></td>
+          <td><%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+      <% end %>
+      </table>
+      
+      <br />
+      
+      <%= link_to 'New Job', volumes_path %>
     
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.name %></td>
-        <td><%= job.description %></td>
-        <td><%= job.ebsvol %></td>
-        <td><%= job.cronline %></td>
-        <td><%= job.copies %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %></td>
-      </tr>
-    <% end %>
-    </table>
-    
-    <br />
-    
-    <%= link_to 'New Job', volumes_path %>
-  
+    </div>
   </div>
 </div>

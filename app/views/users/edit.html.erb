@@ -1,17 +1,22 @@
-<h1>Edit My Account</h1>
-
-<% form_for @user, :url => account_path do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+<div class="container">
+  <%= render :partial => 'layouts/navbar' %>
+  <div class="thin-pad">
+    <h2>Edit My Account</h2>
+    
+    <% form_for @user, :url => account_path do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <%= render :partial => "form", :object => f %>
-  <%= f.submit "Update" %>
-<% end %>
-
-<br /><%= link_to "My Profile", account_path %>
+      <%= render :partial => "form", :object => f %>
+      <%= f.submit "Update" %>
+    <% end %>
+    
+    <br /><%= link_to "Create a new account", new_account_path %>
+  </div>
+</div>

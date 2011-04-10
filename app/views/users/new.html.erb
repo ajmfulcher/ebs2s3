@@ -1,15 +1,45 @@
-<h1>Register</h1>
-
-<% form_for @user, :url => account_path do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+<% unless @current_user.nil? %>
+  <div class="container">
+    <%= render :partial => 'layouts/navbar' %>
+    <div class="thin-pad">
+      <h2>Create new user</h2>
+      
+      <% form_for @user, :url => account_path do |f| %>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= render :partial => "form", :object => f %>
+        <%= f.submit "Create" %>
       <% end %>
-      </ul>
     </div>
-  <% end %>
-  <%= render :partial => "form", :object => f %>
-  <%= f.submit "Register" %>
+  </div>
+<% else %>
+  <%= stylesheet_link_tag ('login.css') %>
+  <div id="floater"></div>
+    <div id="centered">
+      <div class="first-login-box">
+        <h2>Create new user</h2>
+        
+        <% form_for @user, :url => account_path do |f| %>
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <%= render :partial => "form", :object => f %>
+          <%= f.submit "Create" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 <% end %>

@@ -1,25 +1,38 @@
-<h1>Login</h1>
-<% if User.all.empty? %>
-  <%= link_to 'Create admin user', new_user_path %>
-<% else %>
-  <% form_for @user_session, :url => user_session_path do |f| %>
-    <% if @user_session.errors.any? %>
-      <div id="error_explanation">
-        <ul>
-        <% @user_session.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+<%= stylesheet_link_tag ('login.css') %>
+<div id="floater"></div>
+<div id="centered">
+    <% if User.all.empty? %>
+      <div class="first-login-box">
+        <h2>Welcome to EBS-2-S3</h2>
+        <h4>
+          To complete setup, you'll need to create an admin user.  To perform this step, click
+          <%= link_to ' here', new_user_path %>
+        </h4>
+      </div>
+    <% else %>
+      <div class="login-box">
+        <h2>EBS-2-S3</h2>
+        <% form_for @user_session, :url => user_session_path do |f| %>
+          <% if @user_session.errors.any? %>
+            <div id="error_explanation">
+              <ul>
+              <% @user_session.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <%= f.label :login %><br />
+          <%= f.text_field :login %><br />
+          <br />
+          <%= f.label :password %><br />
+          <%= f.password_field :password %><br />
+          <br />
+          <%= f.check_box :remember_me %><%= f.label :remember_me %><br />
+          <br />
+          <%= f.submit "Login" %>
         <% end %>
-        </ul>
       </div>
     <% end %>
-    <%= f.label :login %><br />
-    <%= f.text_field :login %><br />
-    <br />
-    <%= f.label :password %><br />
-    <%= f.password_field :password %><br />
-    <br />
-    <%= f.check_box :remember_me %><%= f.label :remember_me %><br />
-    <br />
-    <%= f.submit "Login" %>
-  <% end %>
-<% end %>
+  </div>
+</div>
