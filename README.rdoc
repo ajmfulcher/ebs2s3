@@ -2,12 +2,18 @@ Ebs2s3 provides a simple way to schedule regular snapshots of EBS volumes to S3.
 
 == Getting Started
 
-git clone git://github.com/ajmfulcher/ebs2s3.git ebs2s3
-cd ebs2s3
-rake db:migrate
+First, grab the application:
+
+  git clone git://github.com/ajmfulcher/ebs2s3.git ebs2s3
+
+Next, set up the database:
+
+  cd ebs2s3
+  rake db:migrate
 
 Update config/appconfig.yml with your Amazon EC2 account details, and you're ready to go, using something like:
-script/rails s -d
+
+  script/rails s -d
 
 Navigate to http://127.0.0.1:3000 and you'll be prompted to create your first admin user.  You'll be able to add others later on.
 
