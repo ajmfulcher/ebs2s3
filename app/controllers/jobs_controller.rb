@@ -1,7 +1,25 @@
+#
+# Copyright 2011, Andrew Fulcher
+#
+# This file is part of Ebs2s3.
+#
+# Ebs2s3 is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# Ebs2s3 is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Ebs2s3.  If not, see <http://www.gnu.org/licenses/>.
+#
+
 class JobsController < ApplicationController
   before_filter :require_user
-  # GET /jobs
-  # GET /jobs.xml
+
   def index
     @jobs = Job.all
     
@@ -11,8 +29,6 @@ class JobsController < ApplicationController
     end
   end
 
-  # GET /jobs/1
-  # GET /jobs/1.xml
   def show
     @job = Job.find(params[:id])
     
@@ -33,8 +49,6 @@ class JobsController < ApplicationController
     end
   end
 
-  # GET /jobs/new
-  # GET /jobs/new.xml
   def new
     @job = Job.new(:ebsvol => params[:ebsvol])
 
@@ -44,13 +58,10 @@ class JobsController < ApplicationController
     end
   end
 
-  # GET /jobs/1/edit
   def edit
     @job = Job.find(params[:id])
   end
 
-  # POST /jobs
-  # POST /jobs.xml
   def create
     @job = Job.new(params[:job])
 
@@ -66,8 +77,6 @@ class JobsController < ApplicationController
     end
   end
 
-  # PUT /jobs/1
-  # PUT /jobs/1.xml
   def update
     @job = Job.find(params[:id])
 
@@ -83,8 +92,6 @@ class JobsController < ApplicationController
     end
   end
 
-  # DELETE /jobs/1
-  # DELETE /jobs/1.xml
   def destroy
     @job = Job.find(params[:id])
     

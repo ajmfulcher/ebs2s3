@@ -1,0 +1,47 @@
+Ebs2s3 provides a simple way to schedule regular snapshots of EBS volumes to S3.
+
+== Getting Started
+
++git clone < add git url here > ebs2s3+
++cd ebs2s3+
++rake db:migrate+
+
+Update config/appconfig.yml with your Amazon EC2 account details, and you're ready to go, using something like:
++script/rails s -d+
+
+Navigate to +http://127.0.0.1:3000+ and you'll be prompted to create your first admin user.  You'll be able to add others later on.
+
+== Creating a first job
+
+Once you log in, you'll see an (empty) listing of snapshot jobs.  Let's fix this.
+
+Click on the "new job" link, and you'll be taken through to a listing of your EBS volumes.  To schedule a new job, click "Create Snapshot Job".
+Most of the job creation fields are pretty self-explanatory.  "Copies" specifies the maximum number of snapshpots to be retained; once this
+limit is reached, the oldest snapshots created by the scheduler are deleted.  Don't worry if you've created snapshots manually: Ebs2s3 won't
+touch these.
+
+== User administration
+
+To change the password of the current user, click on the user's name in the top-right corner of the web interface.  You can also
+create new users from this screen.
+
+== Bugs?
+
+Plenty!  But if you come across one, feel free to fix and open a pull request...
+
+== Copyright
+
+Copyright 2011, Andrew Fulcher
+
+Ebs2s3 is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+ 
+Ebs2s3 is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Ebs2s3.  If not, see <http://www.gnu.org/licenses/>.
