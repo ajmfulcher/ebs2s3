@@ -9,6 +9,7 @@ gem 'sqlite3', '1.3.3'
 gem 'fog', '0.7.1' 
 gem 'rufus-scheduler', '2.0.8'
 gem 'authlogic', '2.1.6'
+gem 'excon', '0.5.8'
 
 # Use unicorn as the web server
 # gem 'unicorn'
