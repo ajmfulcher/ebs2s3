@@ -6,9 +6,10 @@ First, grab the application:
 
   git clone git://github.com/ajmfulcher/ebs2s3.git ebs2s3
 
-Next, set up the database:
+Next, install required gems, and set up the database:
 
   cd ebs2s3
+  bundle install
   rake db:migrate
 
 Update config/appconfig.yml with your Amazon EC2 account details, and you're ready to go, using something like:
