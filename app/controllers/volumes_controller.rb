@@ -27,7 +27,9 @@ class VolumesController < ApplicationController
     region = APP_CONFIG["aws_region"]
     
     @jobvols = Job.all.map{|a| a[:ebsvol]}
-    
+
+    # FIXME: this needs to handle any error correctly. rather than obligingly
+    # swallowing it.
     begin
       conn = Fog::Compute.new(:provider => 'AWS', :aws_access_key_id => aws_key, :aws_secret_access_key => secret, :region => region)
       @volumes = conn.volumes.all
